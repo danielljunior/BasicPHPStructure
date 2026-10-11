@@ -2,7 +2,7 @@
 
 A lightweight, fast starting point for small-to-medium websites built with **vanilla TypeScript** on the front end and **vanilla PHP** on the back end, wired together with **Composer** for PSR-4 autoloading.
 
-It ships with a few aggregated, ready-to-use building blocks (database layer, entities, utilities, dev tooling) so you can start a new project quickly instead of scaffolding everything from scratch. Look through the project for details on each piece.
+It ships with a few aggregated, ready-to-use building blocks (database layer, entities, utilities, dev tooling) so you can start a new project quickly instead of scaffolding everything from scratch.
 
 ## Stack
 

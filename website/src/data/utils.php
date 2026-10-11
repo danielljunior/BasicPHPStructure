@@ -514,7 +514,6 @@ function userIsEditor(): bool
 }
 
 
-
 /**
  * Checks if the current user has edit clearance (owner, admin, or editor).
  *
@@ -524,16 +523,6 @@ function userHasEditClearance(): bool
 {
   return userIsOwner() || userIsAdmin() || userIsEditor();
 }
-
-namespace utils\project;
-
-function getProjectCategoryText( string $category ){
-  $categories = \database\ProjectEntity::$validProjectCategories;
-  $categoryText = $categories[$category] ?? $category;
-
-  return $categoryText;
-}
-
 
 namespace utils\endpoints;
 
