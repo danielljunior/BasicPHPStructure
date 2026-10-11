@@ -7,6 +7,6 @@
 	<script src="/js/main.js" type="module" defer></script>
 </head>
 <body>
-
+  <p>Hello World!</p>
 </body>
 </html>

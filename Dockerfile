@@ -13,6 +13,4 @@ RUN apk add --no-cache \
     vim \
     curl
 
-COPY httpd-vhost.conf /etc/apache2/conf.d/default.conf
-
 WORKDIR /app
