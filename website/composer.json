@@ -1,0 +1,27 @@
+{
+  "name": "daniel/base-php-structure",
+  "description": "Base PHP Structure",
+  "type": "project",
+  "license": "Apache-2.0",
+  "autoload": {
+    "psr-4": {
+      "database\\": [
+        "src/data/db/Entities/",
+        "src/data/db/Classes/",
+        "src/data/db/"
+      ]
+    },
+    "files": [
+      "src/data/utils.php",
+      "src/data/config/misc.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Daniel",
+      "email": "daniel@edtyr.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}

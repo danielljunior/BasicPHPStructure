@@ -1,0 +1,18 @@
+{
+	"name": "a-game-for-idling-php",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "./run-watcher.sh & esbuild ../src/ts/main.ts ../src/ts/hot-reload.ts ../src/ts/editor.ts --bundle --outdir=public/js --watch=forever & cd ../.. && docker compose up -d",
+		"build": "esbuild ../src/ts/main.ts ../src/ts/hot-reload.ts ../src/ts/editor.ts --bundle --minify --outdir=public/js && esbuild ../src/ts/pages/*/main.ts --bundle --minify --outdir=public/js --outbase=../src/ts/pages"
+	},
+	"devDependencies": {
+		"@types/node": "^25.5.2",
+		"esbuild": "^0.28.1",
+		"typescript": "~5.9.3"
+	},
+	"dependencies": {
+		"dompurify": "^3.4.14"
+	}
+}

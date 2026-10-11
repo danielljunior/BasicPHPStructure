@@ -1,0 +1,65 @@
+services:
+  php:
+    build: .
+    # change restart to always or unless-stopped in production
+    restart: "no"
+    container_name: a-game-for-idling-php
+    ports:
+      - "8080:80" # Apache HTTP
+    volumes:
+      - ./website/www/public:/app
+    # tty: true
+    depends_on:
+      a-game-for-idling-mysql:
+        condition: service_healthy # Wait for MySQL healthcheck to pass before starting PHP
+    environment:
+      - TZ=America/Sao_Paulo
+      - DB_HOST=a-game-for-idling-mysql
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=a_game_for_idling
+      - DB_PORT=3306
+      - SRC_RELATIVE_PATH=../src
+      - VENDOR_RELATIVE_PATH=../vendor
+    networks:
+      - a_game_for_idling_network
+
+  a-game-for-idling-mysql:
+    container_name: a-game-for-idling-mysql
+    volumes:
+      - ./db:/var/lib/mysql
+    image: mysql:9.7
+    restart: "no"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: a_game_for_idling
+    networks:
+      - a_game_for_idling_network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -uroot -proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  phpmyadmin-a-game-for-idling:
+    image: phpmyadmin:5.2.3
+    container_name: a-game-for-idling-php-my-admin
+    restart: "no"
+    ports:
+      - "8886:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=a-game-for-idling-mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+      - PMA_PORT=3306
+      - UPLOAD_LIMIT=50M
+    networks:
+      - a_game_for_idling_network
+
+networks:
+  a_game_for_idling_network:
+    driver: bridge
+    internal: false

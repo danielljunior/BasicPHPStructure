@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"target": "ES2023",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"lib": [
+			"ES2023",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"types": [
+			"node"
+		],
+		"skipLibCheck": true,
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"noEmit": true,
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"erasableSyntaxOnly": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedSideEffectImports": true,
+		"outDir": "public/js",
+		"rootDir": "../src"
+	},
+	"include": [
+		"../src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"public"
+	]
+}
