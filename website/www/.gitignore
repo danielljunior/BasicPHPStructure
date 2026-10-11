@@ -13,7 +13,8 @@ dist-ssr
 *.local
 
 # Compiled esbuild output
-public/js
+public/js/*
+!public/js/.gitkeep
 
 # Editor directories and files
 .vscode/*
