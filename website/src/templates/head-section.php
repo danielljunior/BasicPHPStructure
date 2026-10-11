@@ -8,7 +8,7 @@ function renderHeadSection(array $extraStyles = [])
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-  <link rel="shortcut icon" href="/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
   <title>A Game for Idling</title>
   <link rel="stylesheet" href="/css/general.css" />
   <?php foreach ($extraStyles as $style): ?>

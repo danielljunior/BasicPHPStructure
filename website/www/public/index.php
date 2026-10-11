@@ -1,3 +1,4 @@
+<?php require_once './main_imports.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,4 +1,4 @@
-FROM renatomb/alpine-apache-php-git:php8.3
+FROM webdevops/php-apache:8.3-alpine
 
 # Install PHP extensions and tools using Alpine's package manager
 RUN apk add --no-cache \
@@ -13,9 +13,6 @@ RUN apk add --no-cache \
     vim \
     curl
 
-# Make Apache serve from /app (to match the volume mapping)
-# If the image already uses /app as DocumentRoot, this sed is harmless.
-RUN sed -i 's|/var/www/localhost/htdocs|/app|g' /etc/apache2/httpd.conf \
- && mkdir -p /app
+COPY httpd-vhost.conf /etc/apache2/conf.d/default.conf
 
 WORKDIR /app

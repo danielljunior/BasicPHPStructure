@@ -13,7 +13,8 @@
     },
     "files": [
       "src/data/utils.php",
-      "src/data/config/misc.php"
+      "src/data/config/misc.php",
+      "src/templates/head-section.php"
     ]
   },
   "authors": [
