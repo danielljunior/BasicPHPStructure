@@ -20,6 +20,7 @@ services:
       - DB_PASSWORD=root
       - DB_NAME=basic_php
       - DB_PORT=3306
+      - ENABLE_LIVE_RELOAD=true
       - SRC_RELATIVE_PATH=../../src
       - VENDOR_RELATIVE_PATH=../../vendor
     networks:
